@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Company from './Company';
+import CompanyList from './CompanyList';
+import JobList from './JobList';
 
 class Routes extends Component {
   constructor(props) {
@@ -17,8 +18,8 @@ class Routes extends Component {
           path="/companies/:company"
           render={() => <h1>Company</h1>}
         />
-        <Route exact path="/companies" render={() => <h1>Companies</h1>} />
-        <Route exact path="/jobs" render={() => <h1>Jobs</h1>} />
+        <Route exact path="/companies" render={() => <CompanyList />} />
+        <Route exact path="/jobs" render={() => <JobList />} />
         <Route exact path="/login" render={() => <h1>Login</h1>} />
         <Route exact path="/profile" render={() => <h1>Profile</h1>} />
         <Redirect to="/" />
