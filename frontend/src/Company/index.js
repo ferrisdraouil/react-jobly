@@ -12,9 +12,9 @@ class Company extends Component {
         <div className="card-body">
           <div className="media">
             <img
-              src="images/1.svg"
+              src="images/5.svg"
               className="mr-3"
-              width="46"
+              width="45"
               alt="corporate logo"
             />
             <div className="media-body">
