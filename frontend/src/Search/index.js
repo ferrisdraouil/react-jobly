@@ -35,11 +35,7 @@ class Search extends Component {
               aria-describedby="button-addon2"
             />
             <div className="input-group-append">
-              <button
-                className="btn btn-outline-primary"
-                type="submit"
-                id="button-addon2"
-              >
+              <button className="btn btn-info" type="submit" id="button-addon2">
                 Search
               </button>
             </div>

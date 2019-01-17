@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import './index.css';
 
 class Job extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {}
+
   render() {
     return (
       <div className="Job">
@@ -17,7 +21,12 @@ class Job extends Component {
             </p>
           </div>
           <div className="card-footer d-flex justify-content-end bg-transparent">
-            <button className="btn btn-primary">Apply</button>
+            <button
+              className="btn btn-primary text-capitalize"
+              onClick={this.handleClick}
+            >
+              {this.props.detail.state || 'Apply'}
+            </button>
           </div>
         </div>
       </div>

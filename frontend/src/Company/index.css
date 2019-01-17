@@ -1,3 +1,4 @@
 .card-title {
   font-family: 'proxima_novasemibold';
+  text-transform: capitalize;
 }

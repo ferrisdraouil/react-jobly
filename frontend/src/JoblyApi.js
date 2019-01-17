@@ -21,7 +21,7 @@ class JoblyApi {
       // and request body data via the "data" key,
       // so the key we need depends on the HTTP verb
     } catch (err) {
-      console.error('API Error:', err.response);
+      console.error('API Error 2:', err.response);
       let message = err.response.data.message;
       throw Array.isArray(message) ? message : [message];
     }
@@ -56,8 +56,19 @@ class JoblyApi {
     return res.job;
   }
 
+  static async updateJob(id) {
+    let res = await this.request(`job/${id}`);
+    return res.job;
+  }
+
   static async getUser(username) {
     let res = await this.request(`users/${username}`);
+    return res.user;
+  }
+
+  static async patchUser(name, data) {
+    const { username, ...fields } = data;
+    let res = await this.request(`users/${name}`, fields, 'patch');
     return res.user;
   }
 }

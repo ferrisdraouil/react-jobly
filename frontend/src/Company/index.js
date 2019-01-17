@@ -12,13 +12,13 @@ class Company extends Component {
         <div className="card-body">
           <div className="media">
             <img
-              src="images/5.svg"
-              className="mr-3"
+              src={`images/${this.props.id + 1}.svg`}
+              className="mr-3 align-self-center"
               width="45"
               alt="corporate logo"
             />
             <div className="media-body">
-              <h5 className="card-title">{this.props.detail.name}</h5>
+              <h5 className="card-title mb-1">{this.props.detail.name}</h5>
               <p className="card-text">{this.props.detail.description}</p>
             </div>
           </div>

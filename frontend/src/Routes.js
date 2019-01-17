@@ -44,6 +44,7 @@ class Routes extends Component {
               {...routeProps}
               currentUser={this.props.currentUser}
               loggedIn={this.props.loggedIn}
+              updateCurrentUser={this.props.updateCurrentUser}
             />
           )}
         />

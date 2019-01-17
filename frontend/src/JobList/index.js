@@ -45,7 +45,7 @@ class JobList extends Component {
         <Search search={this.handleSearch} />
         <div className="JobList">
           {this.state.jobs.map(job => (
-            <Job detail={job} key={job.id} />
+            <Job key={job.id} detail={job} />
           ))}
         </div>
       </React.Fragment>

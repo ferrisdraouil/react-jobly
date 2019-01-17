@@ -14,6 +14,7 @@ class App extends Component {
     };
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
+    this.updateCurrentUser = this.updateCurrentUser.bind(this);
   }
 
   async componentDidMount() {
@@ -42,6 +43,12 @@ class App extends Component {
     this.setState({ loggedIn: true, currentUser: user });
   }
 
+  updateCurrentUser(user) {
+    this.setState({
+      currentUser: user
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -54,6 +61,7 @@ class App extends Component {
                   loggedIn={this.state.loggedIn}
                   login={this.login}
                   currentUser={this.state.currentUser}
+                  updateCurrentUser={this.updateCurrentUser}
                 />
               </div>
             </div>
