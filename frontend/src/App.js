@@ -22,6 +22,12 @@ class App extends Component {
     }));
   }
 
+  logout() {
+    this.setState({ loggedIn: false }, () =>
+      window.localStorage.removeItem('_token')
+    );
+  }
+
   render() {
     return (
       <div className="App">

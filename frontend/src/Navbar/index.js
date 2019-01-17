@@ -5,9 +5,7 @@ import './index.css';
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loggedIn: false
-    };
+    this.state = {};
   }
 
   render() {
@@ -31,22 +29,17 @@ class Navbar extends Component {
           <NavLink exact className="Navlink nav-item nav-link" to="/profile">
             Profile
           </NavLink>
-          {this.props.loggedIn ? (
+          {!this.props.loggedIn ? (
             <NavLink
               exact
               className="Navlink nav-item nav-link"
               to="/"
-              onClick={this.props.changeLoggedIn}
+              onClick={this.props.logout}
             >
               Logout
             </NavLink>
           ) : (
-            <NavLink
-              exact
-              className="Navlink nav-item nav-link"
-              to="/login"
-              onClick={this.props.changeLoggedIn}
-            >
+            <NavLink exact className="Navlink nav-item nav-link" to="/login">
               Login
             </NavLink>
           )}
