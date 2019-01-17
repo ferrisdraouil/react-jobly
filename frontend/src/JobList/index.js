@@ -8,7 +8,7 @@ class JobList extends Component {
     super(props);
 
     if (!this.props.loggedIn) {
-      this.props.history.push('/login');
+      this.props.history.replace('/login');
     }
 
     this.state = { jobs: [], loading: false, search: '' };
