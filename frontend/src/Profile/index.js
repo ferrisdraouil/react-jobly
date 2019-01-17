@@ -15,7 +15,16 @@ class Profile extends Component {
       lastName: this.props.currentUser.last_name,
       password: ''
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
   render() {
     console.log('USER FROM PROFILE', this.props.currentUser);
     return (
@@ -40,40 +49,36 @@ class Profile extends Component {
             onChange={this.handleChange}
           />
         </div>
-        {this.state.login || (
-          <React.Fragment>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                className="form-control"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="firstName">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                className="form-control"
-                value={this.state.firstName}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                className="form-control"
-                value={this.state.lastName}
-                onChange={this.handleChange}
-              />
-            </div>
-          </React.Fragment>
-        )}
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            className="form-control"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            className="form-control"
+            value={this.state.firstName}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            className="form-control"
+            value={this.state.lastName}
+            onChange={this.handleChange}
+          />
+        </div>
         <div className="d-flex justify-content-end">
           <button type="submit" className="btn btn-info">
             Submit

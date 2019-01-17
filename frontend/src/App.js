@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Routes from './Routes';
 import './App.css';
 import Navbar from './Navbar';
+import JoblyApi from './JoblyApi';
+import decode from 'jwt-decode';
 
 class App extends Component {
   constructor(props) {
@@ -14,9 +16,18 @@ class App extends Component {
     this.logout = this.logout.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    let user;
+    if (window.localStorage.getItem('_token')) {
+      let token = window.localStorage.getItem('_token');
+      let decoded = decode(token);
+      console.log('DECODED', decoded);
+
+      user = await JoblyApi.getUser(decoded.username);
+    }
     this.setState({
-      loggedIn: Boolean(window.localStorage.getItem('_token'))
+      loggedIn: Boolean(window.localStorage.getItem('_token')),
+      currentUser: user || ''
     });
   }
 
