@@ -39,19 +39,23 @@ class Login extends Component {
     );
 
     // create token and save to localStorage
-    window.localStorage.setItem('_token', token);
-    this.props.changeLoggedIn();
+    if (token) {
+      window.localStorage.setItem('_token', token);
 
-    this.setState(
-      {
-        username: '',
-        password: '',
-        email: '',
-        firstName: '',
-        lastName: ''
-      },
-      () => this.props.history.push('/')
-    );
+      this.setState(
+        {
+          username: '',
+          password: '',
+          email: '',
+          firstName: '',
+          lastName: ''
+        },
+        () => {
+          this.props.login();
+          this.props.history.push('/');
+        }
+      );
+    }
   }
 
   render() {

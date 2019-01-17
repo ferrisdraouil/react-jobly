@@ -5,11 +5,6 @@ import JobList from './JobList';
 import Login from './Login';
 
 class Routes extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <Switch>
@@ -37,7 +32,7 @@ class Routes extends Component {
           exact
           path="/login"
           render={routeProps => (
-            <Login {...routeProps} changeLoggedIn={this.props.changeLoggedIn} />
+            <Login {...routeProps} login={this.props.login} />
           )}
         />
         <Route exact path="/profile" render={() => <h1>Profile</h1>} />

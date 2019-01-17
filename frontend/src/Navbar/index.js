@@ -5,7 +5,11 @@ import './index.css';
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    this.props.logout();
   }
 
   render() {
@@ -29,12 +33,12 @@ class Navbar extends Component {
           <NavLink exact className="Navlink nav-item nav-link" to="/profile">
             Profile
           </NavLink>
-          {!this.props.loggedIn ? (
+          {this.props.loggedIn ? (
             <NavLink
               exact
               className="Navlink nav-item nav-link"
               to="/"
-              onClick={this.props.logout}
+              onClick={this.handleLogout}
             >
               Logout
             </NavLink>

@@ -7,19 +7,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: Boolean(window.localStorage.getItem('_token'))
-      // loggedIn: true
+      loggedIn: false
     };
-    this.changeLoggedIn = this.changeLoggedIn.bind(this);
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
-  changeLoggedIn() {
-    if (window.localStorage.getItem('_token')) {
-      window.localStorage.removeItem('_token');
-    }
-    this.setState(state => ({
-      loggedIn: !state.loggedIn
-    }));
+  componentDidMount() {
+    this.setState({
+      loggedIn: Boolean(window.localStorage.getItem('_token'))
+    });
   }
 
   logout() {
@@ -28,21 +25,19 @@ class App extends Component {
     );
   }
 
+  login() {
+    this.setState({ loggedIn: true });
+  }
+
   render() {
     return (
       <div className="App">
-        <Navbar
-          loggedIn={this.state.loggedIn}
-          changeLoggedIn={this.changeLoggedIn}
-        />
+        <Navbar loggedIn={this.state.loggedIn} logout={this.logout} />
         <div className="Page my-5">
           <div className="container-fluid">
             <div className="row">
               <div className="col-12 col-lg-10 offset-lg-1">
-                <Routes
-                  loggedIn={this.state.loggedIn}
-                  changeLoggedIn={this.changeLoggedIn}
-                />
+                <Routes loggedIn={this.state.loggedIn} login={this.login} />
               </div>
             </div>
           </div>
