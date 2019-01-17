@@ -6,6 +6,7 @@ class Job extends Component {
     this.state = {};
   }
   render() {
+    console.log('hello');
     return (
       <div className="Job">
         <div className="card shadow-sm mb-3">
