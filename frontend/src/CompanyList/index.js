@@ -6,11 +6,17 @@ import Search from '../Search';
 class CompanyList extends Component {
   constructor(props) {
     super(props);
+
+    if (!this.props.loggedIn) {
+      this.props.history.push('/login');
+    }
+
     this.state = {
       companies: [],
       loading: false,
       search: ''
     };
+
     this.getCompanies = this.getCompanies.bind(this);
     this.generateCompanies = this.generateCompanies.bind(this);
     this.handleSearch = this.handleSearch.bind(this);

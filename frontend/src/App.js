@@ -8,21 +8,18 @@ class App extends Component {
     super(props);
     this.state = {
       loggedIn: Boolean(window.localStorage.getItem('_token'))
+      // loggedIn: true
     };
     this.changeLoggedIn = this.changeLoggedIn.bind(this);
   }
 
   changeLoggedIn() {
-    this.setState(
-      state => ({
-        loggedIn: !state.loggedIn
-      }),
-      () => {
-        if (!this.state.loggedIn) {
-          window.localStorage.clear();
-        }
-      }
-    );
+    if (window.localStorage.getItem('_token')) {
+      window.localStorage.removeItem('_token');
+    }
+    this.setState(state => ({
+      loggedIn: !state.loggedIn
+    }));
   }
 
   render() {
@@ -36,7 +33,10 @@ class App extends Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-12 col-lg-10 offset-lg-1">
-                <Routes />
+                <Routes
+                  loggedIn={this.state.loggedIn}
+                  changeLoggedIn={this.changeLoggedIn}
+                />
               </div>
             </div>
           </div>

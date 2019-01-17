@@ -40,6 +40,7 @@ class Login extends Component {
 
     // create token and save to localStorage
     window.localStorage.setItem('_token', token);
+    this.props.changeLoggedIn();
 
     this.setState(
       {

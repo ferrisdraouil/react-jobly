@@ -6,6 +6,11 @@ import Search from '../Search';
 class JobList extends Component {
   constructor(props) {
     super(props);
+
+    if (!this.props.loggedIn) {
+      this.props.history.push('/login');
+    }
+
     this.state = { jobs: [], loading: false, search: '' };
     this.generateJobs = this.generateJobs.bind(this);
     this.getJobs = this.getJobs.bind(this);
@@ -19,7 +24,6 @@ class JobList extends Component {
   async getJobs() {
     try {
       const encoded = encodeURIComponent(this.state.search);
-      console.log('ENCODED', encoded);
       const jobs = await JoblyApi.getJobs(encoded);
       this.setState({ jobs });
     } catch (error) {
