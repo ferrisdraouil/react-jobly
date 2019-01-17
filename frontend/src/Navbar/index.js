@@ -8,7 +8,7 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light shadow-sm border-bottom">
         <NavLink
           exact
           className="navbar-brand mr-auto"
@@ -27,7 +27,7 @@ class Navbar extends Component {
           <NavLink exact className="Navlink nav-item nav-link" to="/profile">
             Profile
           </NavLink>
-          <NavLink exact className="Navlink nav-item nav-link" to="/logout">
+          <NavLink exact className="Navlink nav-item nav-link" to="/login">
             Login
           </NavLink>
         </div>

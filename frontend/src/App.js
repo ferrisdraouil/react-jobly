@@ -8,7 +8,15 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Routes />
+        <div className="Page my-5">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12 col-lg-10 offset-lg-1">
+                <Routes />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
