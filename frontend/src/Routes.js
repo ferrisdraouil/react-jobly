@@ -21,7 +21,11 @@ class Routes extends Component {
         />
         <Route exact path="/companies" render={() => <CompanyList />} />
         <Route exact path="/jobs" render={() => <JobList />} />
-        <Route exact path="/login" render={() => <Login />} />
+        <Route
+          exact
+          path="/login"
+          render={routeProps => <Login {...routeProps} />}
+        />
         <Route exact path="/profile" render={() => <h1>Profile</h1>} />
         <Redirect to="/" />
       </Switch>

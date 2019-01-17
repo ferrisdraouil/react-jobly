@@ -49,7 +49,7 @@ class Login extends Component {
         firstName: '',
         lastName: ''
       },
-      () => console.log('submit', this.state)
+      () => this.props.history.push('/')
     );
   }
 

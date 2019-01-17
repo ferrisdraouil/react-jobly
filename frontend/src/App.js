@@ -4,10 +4,34 @@ import './App.css';
 import Navbar from './Navbar';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: Boolean(window.localStorage.getItem('_token'))
+    };
+    this.changeLoggedIn = this.changeLoggedIn.bind(this);
+  }
+
+  changeLoggedIn() {
+    this.setState(
+      state => ({
+        loggedIn: !state.loggedIn
+      }),
+      () => {
+        if (!this.state.loggedIn) {
+          window.localStorage.clear();
+        }
+      }
+    );
+  }
+
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar
+          loggedIn={this.state.loggedIn}
+          changeLoggedIn={this.changeLoggedIn}
+        />
         <div className="Page my-5">
           <div className="container-fluid">
             <div className="row">

@@ -4,8 +4,11 @@ import { NavLink } from 'react-router-dom';
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      loggedIn: false
+    };
   }
+
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-light bg-light shadow-sm border-bottom">
@@ -27,9 +30,25 @@ class Navbar extends Component {
           <NavLink exact className="Navlink nav-item nav-link" to="/profile">
             Profile
           </NavLink>
-          <NavLink exact className="Navlink nav-item nav-link" to="/login">
-            Login
-          </NavLink>
+          {this.props.loggedIn ? (
+            <NavLink
+              exact
+              className="Navlink nav-item nav-link"
+              to="/"
+              onClick={this.props.changeLoggedIn}
+            >
+              Logout
+            </NavLink>
+          ) : (
+            <NavLink
+              exact
+              className="Navlink nav-item nav-link"
+              to="/login"
+              onClick={this.props.changeLoggedIn}
+            >
+              Login
+            </NavLink>
+          )}
         </div>
       </nav>
     );
