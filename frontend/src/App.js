@@ -7,7 +7,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      currentUser: ''
     };
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -20,13 +21,14 @@ class App extends Component {
   }
 
   logout() {
-    this.setState({ loggedIn: false }, () =>
+    this.setState({ loggedIn: false, currentUser: '' }, () =>
       window.localStorage.removeItem('_token')
     );
   }
 
-  login() {
-    this.setState({ loggedIn: true });
+  login(user) {
+    console.log('USER FROM APP', user);
+    this.setState({ loggedIn: true, currentUser: user });
   }
 
   render() {
@@ -37,7 +39,11 @@ class App extends Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-12 col-lg-10 offset-lg-1">
-                <Routes loggedIn={this.state.loggedIn} login={this.login} />
+                <Routes
+                  loggedIn={this.state.loggedIn}
+                  login={this.login}
+                  currentUser={this.state.currentUser}
+                />
               </div>
             </div>
           </div>

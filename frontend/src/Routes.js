@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import CompanyList from './CompanyList';
 import JobList from './JobList';
 import Login from './Login';
+import Profile from './Profile';
 
 class Routes extends Component {
   render() {
@@ -35,7 +36,17 @@ class Routes extends Component {
             <Login {...routeProps} login={this.props.login} />
           )}
         />
-        <Route exact path="/profile" render={() => <h1>Profile</h1>} />
+        <Route
+          exact
+          path="/profile"
+          render={routeProps => (
+            <Profile
+              {...routeProps}
+              currentUser={this.props.currentUser}
+              loggedIn={this.props.loggedIn}
+            />
+          )}
+        />
         <Redirect to="/" />
       </Switch>
     );

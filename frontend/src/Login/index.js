@@ -42,6 +42,10 @@ class Login extends Component {
     if (token) {
       window.localStorage.setItem('_token', token);
 
+      const user = await JoblyApi.getUser(this.state.username);
+
+      this.props.login(user);
+
       this.setState(
         {
           username: '',
@@ -51,7 +55,6 @@ class Login extends Component {
           lastName: ''
         },
         () => {
-          this.props.login();
           this.props.history.push('/');
         }
       );
