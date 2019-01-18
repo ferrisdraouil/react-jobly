@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JoblyApi from '../JoblyApi';
 import Job from '../Job';
 import Search from '../Search';
+import './index.css';
 
 class JobList extends Component {
   constructor(props) {
@@ -39,16 +40,24 @@ class JobList extends Component {
     console.log('JOBS', this.state.jobs);
 
     return (
-      <div className="row my-5">
-        <div className="col-12 col-lg-10 offset-lg-1">
-          <Search search={this.handleSearch} />
-          <div className="JobList">
-            {this.state.jobs.map(job => (
-              <Job key={job.id} detail={job} username={this.props.username} />
-            ))}
+      <React.Fragment>
+        <div className="row mb-5 py-4 px-4 bg-light">
+          <div className="col-12">
+            <h1 class="m-0">Jobs</h1>
           </div>
         </div>
-      </div>
+
+        <div className="row px-4 my-5">
+          <div className="col-12">
+            <Search search={this.handleSearch} />
+            <div className="JobList">
+              {this.state.jobs.map(job => (
+                <Job key={job.id} detail={job} username={this.props.username} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

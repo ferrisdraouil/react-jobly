@@ -1,4 +1,9 @@
+.card-body > img {
+  max-width: 5rem;
+}
+
 .card-title {
+  font-size: 1.1rem;
   font-family: 'proxima_novasemibold';
   text-transform: capitalize;
 }

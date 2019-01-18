@@ -1,0 +1,11 @@
+.CompanyList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.CompanyList > * {
+  margin: 0.5rem;
+  width: calc(33.33333% - 1rem);
+}

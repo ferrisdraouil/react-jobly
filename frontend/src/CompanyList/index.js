@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JoblyApi from '../JoblyApi';
 import Company from '../Company';
 import Search from '../Search';
+import './index.css';
 
 class CompanyList extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class CompanyList extends Component {
             <h1 class="m-0">Companies</h1>
           </div>
         </div>
+
         <div className="row px-4">
           <div className="col-12">
             <Search search={this.handleSearch} />
