@@ -28,7 +28,7 @@ class Job extends Component {
           </div>
           <div className="card-footer d-flex justify-content-end bg-transparent">
             <button
-              className="btn btn-primary text-capitalize"
+              className="btn btn-info text-capitalize"
               onClick={this.handleClick}
             >
               {this.props.detail.state || 'Apply'}
