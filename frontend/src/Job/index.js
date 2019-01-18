@@ -5,18 +5,19 @@ import JoblyApi from '../JoblyApi';
 class Job extends Component {
   constructor(props) {
     super(props);
-
+    this.state = { applied: props.applied || props.detail.state || '' };
     this.handleClick = this.handleClick.bind(this);
   }
 
   async handleClick() {
+    console.log(this.state.applied);
     if (!this.props.state) {
       await JoblyApi.applyToJob(this.props.detail.id, this.props.username);
     }
+    this.setState({ applied: 'applied' });
   }
 
   render() {
-    console.log('JOB DETAIL', this.props.detail);
     return (
       <div className="Job">
         <div className="card shadow-sm">
