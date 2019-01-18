@@ -5,6 +5,7 @@ import CompanyList from './CompanyList';
 import JobList from './JobList';
 import Login from './Login';
 import Profile from './Profile';
+import CompanyPage from './CompanyPage';
 import ProtectedRoute from './ProtectedRoute';
 
 class Routes extends Component {
@@ -12,10 +13,13 @@ class Routes extends Component {
     return (
       <Switch>
         <Route exact path="/" render={() => <Home />} />
-        <Route
+        <ProtectedRoute
           exact
           path="/companies/:company"
-          render={() => <h1>Company</h1>}
+          loggedIn={this.props.loggedIn}
+          render={routeProps => (
+            <CompanyPage {...routeProps} loggedIn={this.props.loggedIn} />
+          )}
         />
         <ProtectedRoute
           exact

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import JoblyApi from '../JoblyApi';
 import Company from '../Company';
 import Search from '../Search';
@@ -52,7 +53,9 @@ class CompanyList extends Component {
             <Search search={this.handleSearch} />
             <div className="CompanyList">
               {this.state.companies.map((company, i) => (
-                <Company key={company.handle} id={i} detail={company} />
+                <Link to={`companies/${company.handle}`}>
+                  <Company key={company.handle} id={i} detail={company} />
+                </Link>
               ))}
             </div>
           </div>

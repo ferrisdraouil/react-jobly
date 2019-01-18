@@ -22,7 +22,6 @@ class App extends Component {
     if (window.localStorage.getItem('_token')) {
       let token = window.localStorage.getItem('_token');
       let decoded = decode(token);
-      console.log('DECODED', decoded);
 
       user = await JoblyApi.getUser(decoded.username);
     }
@@ -39,7 +38,6 @@ class App extends Component {
   }
 
   login(user) {
-    console.log('USER FROM APP', user);
     this.setState({ loggedIn: true, currentUser: user });
   }
 

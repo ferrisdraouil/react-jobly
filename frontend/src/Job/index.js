@@ -10,7 +10,6 @@ class Job extends Component {
 
   async handleClick() {
     if (!this.props.state) {
-      console.log('JOB PROPS', this.props.detail.id, this.props.username);
       await JoblyApi.applyToJob(this.props.detail.id, this.props.username);
     }
   }

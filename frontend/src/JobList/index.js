@@ -37,8 +37,6 @@ class JobList extends Component {
   }
 
   render() {
-    console.log('JOBS', this.state.jobs);
-
     return (
       <React.Fragment>
         <div className="row mb-5 py-4 px-4 bg-light">
