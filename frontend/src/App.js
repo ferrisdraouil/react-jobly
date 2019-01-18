@@ -53,20 +53,14 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar loggedIn={this.state.loggedIn} logout={this.logout} />
-        <div className="Page my-5">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-12 col-lg-10 offset-lg-1">
-                <Routes
-                  loggedIn={this.state.loggedIn}
-                  login={this.login}
-                  currentUser={this.state.currentUser}
-                  updateCurrentUser={this.updateCurrentUser}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        <main className="Page">
+          <Routes
+            loggedIn={this.state.loggedIn}
+            login={this.login}
+            currentUser={this.state.currentUser}
+            updateCurrentUser={this.updateCurrentUser}
+          />
+        </main>
       </div>
     );
   }

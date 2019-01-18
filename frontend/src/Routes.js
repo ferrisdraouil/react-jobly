@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import Home from './Home';
 import CompanyList from './CompanyList';
 import JobList from './JobList';
 import Login from './Login';
@@ -10,7 +11,7 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => <h1>Homepage</h1>} />
+        <Route exact path="/" render={() => <Home />} />
         <Route
           exact
           path="/companies/:company"
