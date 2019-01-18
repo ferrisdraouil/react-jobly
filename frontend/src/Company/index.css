@@ -7,3 +7,7 @@
   font-family: 'proxima_novasemibold';
   text-transform: capitalize;
 }
+
+.card-image {
+  max-height: 30px;
+}
