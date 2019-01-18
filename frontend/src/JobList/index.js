@@ -36,12 +36,14 @@ class JobList extends Component {
   }
 
   render() {
+    console.log('JOBS', this.state.jobs);
+
     return (
       <React.Fragment>
         <Search search={this.handleSearch} />
         <div className="JobList">
           {this.state.jobs.map(job => (
-            <Job key={job.id} detail={job} />
+            <Job key={job.id} detail={job} username={this.props.username} />
           ))}
         </div>
       </React.Fragment>

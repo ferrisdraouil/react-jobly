@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import JoblyApi from '../JoblyApi';
 
 class Job extends Component {
   constructor(props) {
@@ -7,7 +8,11 @@ class Job extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {}
+  async handleClick() {
+    if (!this.props.state) {
+      await JoblyApi.apply(this.props.id, this.props.username);
+    }
+  }
 
   render() {
     return (
