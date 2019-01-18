@@ -39,15 +39,17 @@ class JobList extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="row mb-5 py-4 px-4 bg-light">
-          <div className="col-12">
+        <div className="row mb-4 py-4 px-4 align-items-center bg-light">
+          <div className="col-12 col-md-8">
             <h1 className="m-0">Jobs</h1>
+          </div>
+          <div className="col-12 col-md-4">
+            <Search search={this.handleSearch} />
           </div>
         </div>
 
-        <div className="row px-4 my-5">
+        <div className="row px-4 my-3">
           <div className="col-12">
-            <Search search={this.handleSearch} />
             <div className="JobList">
               {this.state.jobs.map(job => (
                 <Job key={job.id} detail={job} username={this.props.username} />

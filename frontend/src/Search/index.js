@@ -24,11 +24,11 @@ class Search extends Component {
     return (
       <div className="Search">
         <form onSubmit={this.handleSubmit}>
-          <div className="input-group mb-3">
+          <div className="input-group">
             <input
               type="text"
               name="search"
-              className="form-control form-control-lg"
+              className="form-control"
               onChange={this.handleChange}
               placeholder="Enter search term"
               aria-label="Enter search term"
