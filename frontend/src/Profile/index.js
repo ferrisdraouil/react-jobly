@@ -52,7 +52,7 @@ class Profile extends Component {
                   <input
                     type="text"
                     name="username"
-                    className="form-control-plaintext"
+                    className="form-control"
                     defaultValue={this.state.username}
                     readOnly
                   />
@@ -98,7 +98,7 @@ class Profile extends Component {
                   />
                 </div>
                 <div className="d-flex justify-content-end">
-                  <button type="submit" className="btn btn-info">
+                  <button type="submit" className="btn btn-info btn-block">
                     Submit
                   </button>
                 </div>

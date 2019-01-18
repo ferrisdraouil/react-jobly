@@ -15,7 +15,7 @@ class Navbar extends Component {
   render() {
     return (
       <header>
-        <nav className="navbar navbar-expand-sm navbar-dark bg-info px-5 shadow-sm border-bottom">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-info px-md-4 shadow-sm border-bottom">
           <NavLink
             exact
             className="navbar-brand mr-3"
