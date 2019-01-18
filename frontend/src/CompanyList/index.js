@@ -39,16 +39,23 @@ class CompanyList extends Component {
 
   render() {
     return (
-      <div className="row my-5">
-        <div className="col-12 col-lg-10 offset-lg-1">
-          <Search search={this.handleSearch} />
-          <div className="CompanyList">
-            {this.state.companies.map((company, i) => (
-              <Company key={company.handle} id={i} detail={company} />
-            ))}
+      <React.Fragment>
+        <div className="row mb-5 py-4 px-4 bg-light">
+          <div className="col-12">
+            <h1 class="m-0">Companies</h1>
           </div>
         </div>
-      </div>
+        <div className="row px-4">
+          <div className="col-12">
+            <Search search={this.handleSearch} />
+            <div className="CompanyList">
+              {this.state.companies.map((company, i) => (
+                <Company key={company.handle} id={i} detail={company} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

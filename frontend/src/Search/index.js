@@ -28,7 +28,7 @@ class Search extends Component {
             <input
               type="text"
               name="search"
-              className="form-control"
+              className="form-control form-control-lg"
               onChange={this.handleChange}
               placeholder="Enter search term"
               aria-label="Enter search term"

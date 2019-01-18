@@ -43,7 +43,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="row my-5">
-        <div className="col-12 col-lg-10 offset-lg-1">
+        <div className="col-12 col-lg-4 offset-lg-4">
           <div className="card">
             <div className="card-body">
               <form onSubmit={this.handleSubmit}>

@@ -15,10 +15,10 @@ class Navbar extends Component {
   render() {
     return (
       <header>
-        <nav className="navbar navbar-expand-sm navbar-light bg-white shadow-sm border-bottom">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-info px-5 shadow-sm border-bottom">
           <NavLink
             exact
-            className="navbar-brand mr-auto"
+            className="navbar-brand mr-3"
             activeClassName="active"
             to="/"
           >
@@ -38,6 +38,8 @@ class Navbar extends Component {
             <NavLink exact className="Navlink nav-item nav-link" to="/profile">
               Profile
             </NavLink>
+          </div>
+          <div className="navbar-nav ml-auto">
             {this.props.loggedIn ? (
               <NavLink
                 exact
