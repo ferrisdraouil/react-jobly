@@ -44,7 +44,7 @@ class CompanyList extends Component {
       <React.Fragment>
         <div className="row mb-5 py-4 px-4 bg-light">
           <div className="col-12">
-            <h1 class="m-0">Companies</h1>
+            <h1 className="m-0">Companies</h1>
           </div>
         </div>
 
@@ -53,7 +53,11 @@ class CompanyList extends Component {
             <Search search={this.handleSearch} />
             <div className="CompanyList">
               {this.state.companies.map((company, i) => (
-                <Link to={`companies/${company.handle}`}>
+                <Link
+                  key={i}
+                  to={`companies/${company.handle}`}
+                  style={{ textDecoration: 'none' }}
+                >
                   <Company key={company.handle} id={i} detail={company} />
                 </Link>
               ))}

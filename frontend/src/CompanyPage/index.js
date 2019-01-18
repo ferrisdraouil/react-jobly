@@ -12,18 +12,28 @@ class CompanyPage extends Component {
     const company = await JoblyApi.getCompany(this.props.match.params.company);
     const jobs = company.jobs;
     const name = company.name;
-    // const name = company.han;
     this.setState({ jobs, name });
   }
 
   render() {
     return (
-      <div className="CompanyPage">
-        <h1 className="text-capitalize">{this.state.name}</h1>
-        {this.state.jobs.map(job => (
-          <Job detail={job} />
-        ))}
-      </div>
+      <React.Fragment>
+        <div className="row mb-5 py-4 px-4 bg-light">
+          <div className="col-12">
+            <h1 className="m-0 text-capitalize">{this.state.name}</h1>
+          </div>
+        </div>
+
+        <div className="row px-4 my-5">
+          <div className="col-12">
+            <div className="JobList">
+              {this.state.jobs.map(job => (
+                <Job key={job.id} detail={job} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

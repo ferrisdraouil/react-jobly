@@ -12,6 +12,7 @@ class Job extends Component {
     if (!this.props.state) {
       await JoblyApi.applyToJob(this.props.detail.id, this.props.username);
     }
+    this.forceUpdate();
   }
 
   render() {

@@ -6,6 +6,7 @@
 }
 
 .CompanyList > * {
+  display: flex;
   margin: 0.5rem;
   width: calc(100% - 1rem);
 }
@@ -26,4 +27,16 @@
   .CompanyList > * {
     width: calc(25% - 1rem);
   }
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.card {
+  width: 100%;
 }

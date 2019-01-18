@@ -81,7 +81,7 @@ class JoblyApi {
   }
 
   static async applyToJob(id, username) {
-    const res = await this.request(`jobs/${id}/apply`, { username }, 'post');
+    await this.request(`jobs/${id}/apply`, { username }, 'post');
   }
 }
 

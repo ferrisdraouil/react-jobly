@@ -41,7 +41,7 @@ class JobList extends Component {
       <React.Fragment>
         <div className="row mb-5 py-4 px-4 bg-light">
           <div className="col-12">
-            <h1 class="m-0">Jobs</h1>
+            <h1 className="m-0">Jobs</h1>
           </div>
         </div>
 
