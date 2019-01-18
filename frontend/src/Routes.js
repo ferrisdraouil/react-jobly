@@ -30,7 +30,11 @@ class Routes extends Component {
           path="/jobs"
           loggedIn={this.props.loggedIn}
           render={routeProps => (
-            <JobList {...routeProps} loggedIn={this.props.loggedIn} />
+            <JobList
+              {...routeProps}
+              loggedIn={this.props.loggedIn}
+              username={this.props.currentUser.username}
+            />
           )}
         />
         <Route
