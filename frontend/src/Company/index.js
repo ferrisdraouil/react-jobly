@@ -6,6 +6,7 @@ class Company extends Component {
     super(props);
     this.state = {};
   }
+  // Build on click method that renders company and its jobs
   render() {
     return (
       <div className="card shadow-sm mb-3">

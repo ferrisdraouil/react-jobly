@@ -51,6 +51,14 @@ class JoblyApi {
     return res.jobs;
   }
 
+  // Get companies jobs
+  // pass search term into query string...
+  // ?search=${term}
+  // static async getCompanyJobs(term) {
+  //   const res = await this.request(`jobs/?search=${term}`);
+  //   return res.jobs;
+  // }
+
   static async getJob(id) {
     let res = await this.request(`job/${id}`);
     return res.job;
