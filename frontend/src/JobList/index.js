@@ -50,7 +50,13 @@ class JobList extends Component {
             <Search search={this.handleSearch} />
             <div className="JobList">
               {this.state.jobs.map(job => (
-                <Job key={job.id} detail={job} username={this.props.username} />
+                <Job
+                  key={job.id}
+                  applied={job.state}
+                  detail={job}
+                  username={this.props.username}
+                  updateCurrentUser={this.props.updateCurrentUser}
+                />
               ))}
             </div>
           </div>

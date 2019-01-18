@@ -26,6 +26,7 @@ class Routes extends Component {
               {...routeProps}
               loggedIn={this.props.loggedIn}
               currentUser={this.props.currentUser}
+              updateCurrentUser={this.props.updateCurrentUser}
             />
           )}
         />
@@ -50,6 +51,7 @@ class Routes extends Component {
               {...routeProps}
               loggedIn={this.props.loggedIn}
               username={this.props.currentUser.username}
+              updateCurrentUser={this.props.updateCurrentUser}
             />
           )}
         />

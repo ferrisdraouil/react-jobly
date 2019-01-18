@@ -5,16 +5,16 @@ import JoblyApi from '../JoblyApi';
 class Job extends Component {
   constructor(props) {
     super(props);
-    this.state = { applied: props.applied || props.detail.state || '' };
+    this.state = { applied: props.applied };
     this.handleClick = this.handleClick.bind(this);
   }
 
   async handleClick() {
-    console.log(this.state.applied);
-    if (!this.props.state) {
+    if (!this.state.applied) {
       await JoblyApi.applyToJob(this.props.detail.id, this.props.username);
     }
-    this.setState({ applied: 'applied' });
+    await this.props.updateCurrentUser();
+    // this.setState({ applied: 'applied' }, this.props.updateCurrentUser());
   }
 
   render() {
@@ -33,9 +33,7 @@ class Job extends Component {
               className="btn btn-info text-capitalize"
               onClick={this.handleClick}
             >
-              {this.props.applied
-                ? this.props.applied
-                : this.props.detail.state || 'Apply'}
+              {this.state.applied || 'Apply'}
             </button>
           </div>
         </div>

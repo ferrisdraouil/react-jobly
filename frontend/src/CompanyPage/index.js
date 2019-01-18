@@ -21,7 +21,6 @@ class CompanyPage extends Component {
   }
 
   render() {
-    console.log('CURR USER', this.props.currentUser);
     return (
       <React.Fragment>
         <div className="row mb-5 py-4 px-4 bg-light">
@@ -37,6 +36,7 @@ class CompanyPage extends Component {
                 <Job
                   key={job.id}
                   detail={job}
+                  updateCurrentUser={this.props.updateCurrentUser}
                   applied={
                     this.props.currentUser.jobs.some(elem => {
                       return job.id === elem.id;
