@@ -7,5 +7,23 @@
 
 .CompanyList > * {
   margin: 0.5rem;
-  width: calc(33.33333% - 1rem);
+  width: calc(100% - 1rem);
+}
+
+@media (min-width: 480px) {
+  .CompanyList > * {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .CompanyList > * {
+    width: calc(33.33333% - 1rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .CompanyList > * {
+    width: calc(25% - 1rem);
+  }
 }

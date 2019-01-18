@@ -18,7 +18,7 @@ class Job extends Component {
   render() {
     return (
       <div className="Job">
-        <div className="card shadow-sm mb-3">
+        <div className="card shadow-sm">
           <div className="card-body">
             <h5 className="card-title">{this.props.detail.title}</h5>
             <p className="card-text m-0">Salary: {this.props.detail.salary}</p>
