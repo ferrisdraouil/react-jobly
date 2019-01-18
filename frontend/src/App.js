@@ -25,6 +25,7 @@ class App extends Component {
 
       user = await JoblyApi.getUser(decoded.username);
     }
+
     this.setState({
       loggedIn: Boolean(window.localStorage.getItem('_token')),
       currentUser: user || ''
@@ -50,7 +51,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar loggedIn={this.state.loggedIn} logout={this.logout} />
+        <Navbar
+          loggedIn={this.state.loggedIn}
+          logout={this.logout}
+          currentUser={this.state.currentUser}
+        />
         <main className="Main container-fluid">
           <Routes
             loggedIn={this.state.loggedIn}

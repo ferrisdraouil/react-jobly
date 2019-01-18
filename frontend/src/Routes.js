@@ -12,13 +12,21 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => <Home />} />
+        <Route
+          exact
+          path="/"
+          render={() => <Home currentUser={this.props.currentUser} />}
+        />
         <ProtectedRoute
           exact
           path="/companies/:company"
           loggedIn={this.props.loggedIn}
           render={routeProps => (
-            <CompanyPage {...routeProps} loggedIn={this.props.loggedIn} />
+            <CompanyPage
+              {...routeProps}
+              loggedIn={this.props.loggedIn}
+              currentUser={this.props.currentUser}
+            />
           )}
         />
         <ProtectedRoute
@@ -26,7 +34,11 @@ class Routes extends Component {
           path="/companies"
           loggedIn={this.props.loggedIn}
           render={routeProps => (
-            <CompanyList {...routeProps} loggedIn={this.props.loggedIn} />
+            <CompanyList
+              {...routeProps}
+              loggedIn={this.props.loggedIn}
+              currentUser={this.props.currentUser}
+            />
           )}
         />
         <ProtectedRoute

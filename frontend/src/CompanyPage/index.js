@@ -6,9 +6,14 @@ class CompanyPage extends Component {
   constructor(props) {
     super(props);
     this.state = { jobs: [], name: '' };
+    this.generateJobs = this.generateJobs.bind(this);
   }
 
   async componentDidMount() {
+    this.generateJobs();
+  }
+
+  async generateJobs() {
     const company = await JoblyApi.getCompany(this.props.match.params.company);
     const jobs = company.jobs;
     const name = company.name;
@@ -16,6 +21,7 @@ class CompanyPage extends Component {
   }
 
   render() {
+    console.log('CURR USER', this.props.currentUser);
     return (
       <React.Fragment>
         <div className="row mb-5 py-4 px-4 bg-light">
@@ -28,7 +34,17 @@ class CompanyPage extends Component {
           <div className="col-12">
             <div className="JobList">
               {this.state.jobs.map(job => (
-                <Job key={job.id} detail={job} />
+                <Job
+                  key={job.id}
+                  detail={job}
+                  applied={
+                    this.props.currentUser.jobs.some(elem => {
+                      return job.id === elem.id;
+                    })
+                      ? 'Applied'
+                      : 'Apply'
+                  }
+                />
               ))}
             </div>
           </div>

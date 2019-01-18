@@ -5,6 +5,7 @@ import JoblyApi from '../JoblyApi';
 class Job extends Component {
   constructor(props) {
     super(props);
+
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -15,6 +16,7 @@ class Job extends Component {
   }
 
   render() {
+    console.log('JOB DETAIL', this.props.detail);
     return (
       <div className="Job">
         <div className="card shadow-sm">
@@ -30,7 +32,9 @@ class Job extends Component {
               className="btn btn-info text-capitalize"
               onClick={this.handleClick}
             >
-              {this.props.detail.state || 'Apply'}
+              {this.props.applied
+                ? this.props.applied
+                : this.props.detail.state || 'Apply'}
             </button>
           </div>
         </div>
