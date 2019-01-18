@@ -6,11 +6,6 @@ import Search from '../Search';
 class CompanyList extends Component {
   constructor(props) {
     super(props);
-
-    if (!this.props.loggedIn) {
-      this.props.history.replace('/login');
-    }
-
     this.state = {
       companies: [],
       loading: false,

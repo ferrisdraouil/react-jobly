@@ -7,10 +7,6 @@ class JobList extends Component {
   constructor(props) {
     super(props);
 
-    if (!this.props.loggedIn) {
-      this.props.history.replace('/login');
-    }
-
     this.state = { jobs: [], loading: false, search: '' };
     this.generateJobs = this.generateJobs.bind(this);
     this.getJobs = this.getJobs.bind(this);

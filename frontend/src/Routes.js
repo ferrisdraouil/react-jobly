@@ -4,6 +4,7 @@ import CompanyList from './CompanyList';
 import JobList from './JobList';
 import Login from './Login';
 import Profile from './Profile';
+import ProtectedRoute from './ProtectedRoute';
 
 class Routes extends Component {
   render() {
@@ -15,16 +16,18 @@ class Routes extends Component {
           path="/companies/:company"
           render={() => <h1>Company</h1>}
         />
-        <Route
+        <ProtectedRoute
           exact
           path="/companies"
+          loggedIn={this.props.loggedIn}
           render={routeProps => (
             <CompanyList {...routeProps} loggedIn={this.props.loggedIn} />
           )}
         />
-        <Route
+        <ProtectedRoute
           exact
           path="/jobs"
+          loggedIn={this.props.loggedIn}
           render={routeProps => (
             <JobList {...routeProps} loggedIn={this.props.loggedIn} />
           )}
@@ -36,9 +39,10 @@ class Routes extends Component {
             <Login {...routeProps} login={this.props.login} />
           )}
         />
-        <Route
+        <ProtectedRoute
           exact
           path="/profile"
+          loggedIn={this.props.loggedIn}
           render={routeProps => (
             <Profile
               {...routeProps}

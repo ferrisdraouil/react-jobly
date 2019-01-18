@@ -5,10 +5,6 @@ class Profile extends Component {
   constructor(props) {
     super(props);
 
-    if (!this.props.loggedIn) {
-      this.props.history.push('/login');
-    }
-
     this.state = {
       username: this.props.currentUser.username,
       email: this.props.currentUser.email,
