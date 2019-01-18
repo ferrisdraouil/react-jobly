@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar loggedIn={this.state.loggedIn} logout={this.logout} />
-        <main className="Page">
+        <main className="Main container-fluid">
           <Routes
             loggedIn={this.state.loggedIn}
             login={this.login}

@@ -39,14 +39,16 @@ class CompanyList extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Search search={this.handleSearch} />
-        <div className="CompanyList">
-          {this.state.companies.map((company, i) => (
-            <Company key={company.handle} id={i} detail={company} />
-          ))}
+      <div className="row my-5">
+        <div className="col-12 col-lg-10 offset-lg-1">
+          <Search search={this.handleSearch} />
+          <div className="CompanyList">
+            {this.state.companies.map((company, i) => (
+              <Company key={company.handle} id={i} detail={company} />
+            ))}
+          </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

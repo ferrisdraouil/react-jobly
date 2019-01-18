@@ -12,7 +12,7 @@ class Company extends Component {
         <div className="card-body">
           <div className="media">
             <img
-              src={`images/${this.props.id + 1}.svg`}
+              src={`images/logos/${this.props.id + 1}.svg`}
               className="mr-3 align-self-center"
               width="45"
               alt="corporate logo"

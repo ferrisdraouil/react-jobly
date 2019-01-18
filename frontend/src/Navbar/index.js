@@ -14,41 +14,47 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-white shadow-sm border-bottom">
-        <NavLink
-          exact
-          className="navbar-brand mr-auto"
-          activeClassName="active"
-          to="/"
-        >
-          Jobly
-        </NavLink>
-        <div className="navbar-nav">
-          <NavLink exact className="Navlink nav-item nav-link" to="/companies">
-            Companies
+      <header>
+        <nav className="navbar navbar-expand-sm navbar-light bg-white shadow-sm border-bottom">
+          <NavLink
+            exact
+            className="navbar-brand mr-auto"
+            activeClassName="active"
+            to="/"
+          >
+            Jobly
           </NavLink>
-          <NavLink exact className="Navlink nav-item nav-link" to="/jobs">
-            Jobs
-          </NavLink>
-          <NavLink exact className="Navlink nav-item nav-link" to="/profile">
-            Profile
-          </NavLink>
-          {this.props.loggedIn ? (
+          <div className="navbar-nav">
             <NavLink
               exact
               className="Navlink nav-item nav-link"
-              to="/"
-              onClick={this.handleLogout}
+              to="/companies"
             >
-              Logout
+              Companies
             </NavLink>
-          ) : (
-            <NavLink exact className="Navlink nav-item nav-link" to="/login">
-              Login
+            <NavLink exact className="Navlink nav-item nav-link" to="/jobs">
+              Jobs
             </NavLink>
-          )}
-        </div>
-      </nav>
+            <NavLink exact className="Navlink nav-item nav-link" to="/profile">
+              Profile
+            </NavLink>
+            {this.props.loggedIn ? (
+              <NavLink
+                exact
+                className="Navlink nav-item nav-link"
+                to="/"
+                onClick={this.handleLogout}
+              >
+                Logout
+              </NavLink>
+            ) : (
+              <NavLink exact className="Navlink nav-item nav-link" to="/login">
+                Login
+              </NavLink>
+            )}
+          </div>
+        </nav>
+      </header>
     );
   }
 }

@@ -42,65 +42,69 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="card">
-        <div className="card-body">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                name="username"
-                className="form-control-plaintext"
-                defaultValue={this.state.username}
-                readOnly
-              />
+      <div className="row my-5">
+        <div className="col-12 col-lg-10 offset-lg-1">
+          <div className="card">
+            <div className="card-body">
+              <form onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="username">Username</label>
+                  <input
+                    type="text"
+                    name="username"
+                    className="form-control-plaintext"
+                    defaultValue={this.state.username}
+                    readOnly
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-control"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="first_name">First Name</label>
+                  <input
+                    type="text"
+                    name="first_name"
+                    className="form-control"
+                    value={this.state.first_name}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="last_name">Last Name</label>
+                  <input
+                    type="text"
+                    name="last_name"
+                    className="form-control"
+                    value={this.state.last_name}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Re-enter password to update</label>
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="d-flex justify-content-end">
+                  <button type="submit" className="btn btn-info">
+                    Submit
+                  </button>
+                </div>
+              </form>
             </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                className="form-control"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="first_name">First Name</label>
-              <input
-                type="text"
-                name="first_name"
-                className="form-control"
-                value={this.state.first_name}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="last_name">Last Name</label>
-              <input
-                type="text"
-                name="last_name"
-                className="form-control"
-                value={this.state.last_name}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Re-enter password to update</label>
-              <input
-                type="password"
-                name="password"
-                className="form-control"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="d-flex justify-content-end">
-              <button type="submit" className="btn btn-info">
-                Submit
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     );
