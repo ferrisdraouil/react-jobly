@@ -41,8 +41,8 @@ class CompanyPage extends Component {
                     this.props.currentUser.jobs.some(elem => {
                       return job.id === elem.id;
                     })
-                      ? 'Applied'
-                      : 'Apply'
+                      ? 'applied'
+                      : null
                   }
                 />
               ))}

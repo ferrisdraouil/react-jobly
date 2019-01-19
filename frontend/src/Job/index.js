@@ -13,8 +13,7 @@ class Job extends Component {
     if (!this.state.applied) {
       await JoblyApi.applyToJob(this.props.detail.id, this.props.username);
     }
-    await this.props.updateCurrentUser();
-    // this.setState({ applied: 'applied' }, this.props.updateCurrentUser());
+    this.setState({ applied: 'applied' }, this.props.updateCurrentUser);
   }
 
   render() {

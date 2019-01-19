@@ -43,9 +43,7 @@ class App extends Component {
   }
 
   async updateCurrentUser(user) {
-    let token = window.localStorage.getItem('_token');
-    let decoded = decode(token);
-    let newUser = await JoblyApi.getUser(decoded.username);
+    let newUser = await JoblyApi.getUser(this.state.currentUser.username);
 
     this.setState({
       currentUser: newUser
