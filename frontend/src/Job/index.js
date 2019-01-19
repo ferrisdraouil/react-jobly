@@ -27,7 +27,7 @@ class Job extends Component {
               Equity: {this.props.detail.equity || 0}
             </p>
           </div>
-          <div className="card-footer d-flex justify-content-end bg-transparent">
+          <div className="card-footer border-0 d-flex justify-content-end bg-transparent">
             <button
               className="btn btn-info text-capitalize"
               onClick={this.handleClick}

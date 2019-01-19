@@ -40,10 +40,10 @@ class JobList extends Component {
     return (
       <React.Fragment>
         <div className="row mb-4 py-4 px-md-4 align-items-center bg-light">
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 col-lg-8">
             <h1 className="mb-2 mb-md-0">Jobs</h1>
           </div>
-          <div className="col-12 col-md-4">
+          <div className="col-12 col-md-6 col-lg-4">
             <Search search={this.handleSearch} />
           </div>
         </div>
