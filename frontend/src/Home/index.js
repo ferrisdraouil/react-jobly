@@ -10,7 +10,11 @@ class Home extends Component {
         <p className="lead mb-1">All the jobs in one, convenient place.</p>
         {this.props.currentUser ? (
           <p className="Home-welcome-back h3 m-0">
-            Welcome back, {this.props.currentUser.first_name}!
+            Welcome back{' '}
+            {this.props.currentUser.first_name
+              ? `, ${this.props.currentUser.first_name}`
+              : ''}
+            !
           </p>
         ) : (
           <Link to="/login" className="mt-2 btn btn-lg btn-info">
