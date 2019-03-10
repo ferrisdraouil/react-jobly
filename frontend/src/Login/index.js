@@ -33,10 +33,14 @@ class Login extends Component {
   async handleSubmit(evt) {
     evt.preventDefault();
 
-    const token = await JoblyApi.login(
-      this.state.username,
-      this.state.password
-    );
+    let token;
+    if (this.state.login) {
+      const { username, password } = this.state
+      token = await JoblyApi.login(username, password);
+    } else {
+      const { login, ...data } = this.state;
+      token = await JoblyApi.register(data);
+    }
 
     // create token and save to localStorage
     if (token) {

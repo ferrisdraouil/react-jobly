@@ -32,6 +32,11 @@ class JoblyApi {
     return res.token;
   }
 
+  static async register(data) {
+    let res = await this.request(`register/`, data, 'post');
+    return res.token;
+  }
+
   static async getCompanies(searchTerm) {
     let res = await this.request(
       `companies/${searchTerm ? `?search=${searchTerm}` : ''}`

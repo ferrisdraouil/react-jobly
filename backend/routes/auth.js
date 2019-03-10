@@ -16,5 +16,15 @@ router.post("/login", async function(req, res, next) {
   }
 });
 
+router.post("/register", async function(req, res, next) {
+  try {
+    const user = await User.register(req.body);
+    const token = createToken(user);
+    return res.json({ token });
+  } catch (e) {
+    return next(e);
+  }
+});
+
 
 module.exports = router;
