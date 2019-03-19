@@ -22,3 +22,7 @@ To run express server, from "backend" directory
 To launch frontend, from "frontend" directory
 
 ```npm start```
+
+To run tests, from top-level directory
+
+```npm test```
