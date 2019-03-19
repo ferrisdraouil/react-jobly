@@ -23,6 +23,6 @@ To launch frontend, from "frontend" directory
 
 ```npm start```
 
-To run tests, from top-level directory
+To run tests, from top-level, or "backend" directory
 
 ```npm test```
